@@ -19,13 +19,16 @@ import java.util.List;
 
 public class StudentInfo {
 
+    /**Create object for studentSorter class*/
     StudentSorter studentSorter = new StudentSorter();
     List<Student> studentList = new ArrayList<>();
 
+    /**Implement setter to set students details*/
     public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
     }
 
+    /**Sort the students info and return*/
     public List<Student> getStudentList() {
         Collections.sort(this.studentList, Collections.reverseOrder(studentSorter));
         return this.studentList;
@@ -41,9 +44,11 @@ class Student {
     private int age;
 
     public Student(int id, String name, int age) {
+        /**If name is null throw null pointer exception*/
         if (name == null) {
             throw new NullPointerException();
         } else if (age <= 0) {
+            /**If age is less than 0 throw exception*/
             try {
                 throw new Exception("Invalid age");
             } catch (Exception e) {
@@ -55,6 +60,7 @@ class Student {
         }
     }
 
+    /**Implement getter*/
     public int getId() {
         return id;
     }
@@ -68,26 +74,28 @@ class Student {
     }
 }
 
-
+ /**Created a `StudentSorter` class that implements `Comparator interface`*/
 class StudentSorter implements Comparator<Student> {
 
     @Override
     public int compare(Student student, Student studentNext) {
-        int ageDifference = student.getAge() - studentNext.getAge();
-        if (ageDifference == 0) {
-            if (student.getName().contentEquals(studentNext.getName())) {
-                return student.getId() - studentNext.getId();
-            }
-            int nameDifference = student.getName().compareTo(studentNext.getName());
-            if (nameDifference < 0) {
-                nameDifference = nameDifference * -1;
-            } else if (nameDifference > 0) {
-                nameDifference = nameDifference * -1;
-            }
-            return nameDifference;
-        }
-
-        return ageDifference;
+//        int ageDifference = student.getAge() - studentNext.getAge();
+//        if (ageDifference == 0) {
+//            if (student.getName().contentEquals(studentNext.getName())) {
+//                return student.getId() - studentNext.getId();
+//            }
+//            int nameDifference = student.getName().compareTo(studentNext.getName());
+//            if (nameDifference < 0) {
+//                nameDifference = nameDifference * -1;
+//            } else if (nameDifference > 0) {
+//                nameDifference = nameDifference * -1;
+//            }
+//            return nameDifference;
+//        }
+//
+        //  return ageDifference;
+        //  }
+        return 0;
     }
 }
 
