@@ -44,10 +44,7 @@ class Student {
     private int age;
 
     public Student(int id, String name, int age) {
-        /**If name is null throw null pointer exception*/
-        if (name == null) {
-            throw new NullPointerException();
-        } else if (age <= 0) {
+      if (age <= 0) {
             /**If age is less than 0 throw exception*/
             try {
                 throw new Exception("Invalid age");
