@@ -72,13 +72,13 @@ class Student {
 class StudentSorter implements Comparator<Student> {
 
     @Override
-    public int compare(Student student, Student t1) {
-        int ageDifference = student.getAge() - t1.getAge();
+    public int compare(Student student, Student studentNext) {
+        int ageDifference = student.getAge() - studentNext.getAge();
         if (ageDifference == 0) {
-            if (student.getName().contentEquals(t1.getName())) {
-                return student.getId() - t1.getId();
+            if (student.getName().contentEquals(studentNext.getName())) {
+                return student.getId() - studentNext.getId();
             }
-            int nameDifference = student.getName().compareTo(t1.getName());
+            int nameDifference = student.getName().compareTo(studentNext.getName());
             if (nameDifference < 0) {
                 nameDifference = nameDifference * -1;
             } else if (nameDifference > 0) {
