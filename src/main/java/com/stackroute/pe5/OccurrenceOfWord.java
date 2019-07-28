@@ -16,6 +16,7 @@ public class OccurrenceOfWord {
         Map<String, Integer> map = new HashMap<String, Integer>();
 
         String[] stringArray = inputString.trim().split("\\W|_| ");
+
         for (String string : stringArray) {
             Integer integer= map.get(string);
             map.put(string, (integer == null) ? 1 : integer + 1);
