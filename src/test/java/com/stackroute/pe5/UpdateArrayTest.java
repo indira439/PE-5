@@ -80,7 +80,7 @@ public class UpdateArrayTest {
         List<String> inputArray = new ArrayList<>();
 //        inputArray.add("Apple");
 //        inputArray.add("Grape");
-        updateArray.updateArrayElement(inputArray, -1, "Goa");
+        updateArray.updateArrayElement(inputArray, -9, "Goa");
     }
 
     @Test(expected = IndexOutOfBoundsException.class)

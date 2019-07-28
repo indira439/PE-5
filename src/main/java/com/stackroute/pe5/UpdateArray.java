@@ -16,14 +16,9 @@ public class UpdateArray {
     public List updateArrayElement(List<String> inputArray, int index, String newElement) {
 
         /**Throw invalid parameter exception if array size is less than 0 or index is less than 0*/
-        if (inputArray.size() <= 0 || index < 0) {
-            throw new InvalidParameterException();
-        }
-
-        /**Throw index of bound exception if index is greater array size */
-        if (index > inputArray.size()) {
-            throw new IndexOutOfBoundsException();
-        }
+//        if (inputArray.size() <= 0 || index < 0) {
+//            throw new InvalidParameterException();
+//        }
 
         arrayList = new ArrayList<String>(inputArray);
         arrayList.clear();
