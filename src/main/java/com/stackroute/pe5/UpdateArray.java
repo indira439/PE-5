@@ -6,7 +6,6 @@ package com.stackroute.pe5;
  * Array list after removing all elements []
  */
 
-import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,11 +13,6 @@ public class UpdateArray {
     public ArrayList<String> arrayList;
 
     public List updateArrayElement(List<String> inputArray, int index, String newElement) {
-
-        /**Throw invalid parameter exception if array size is less than 0 or index is less than 0*/
-//        if (inputArray.size() <= 0 || index < 0) {
-//            throw new InvalidParameterException();
-//        }
 
         arrayList = new ArrayList<String>(inputArray);
         arrayList.clear();

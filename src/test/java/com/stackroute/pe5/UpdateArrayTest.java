@@ -65,8 +65,8 @@ public class UpdateArrayTest {
         updateArray.updateArrayElement(null, 0, "Kiwi");
     }
 
-    @Test(expected = InvalidParameterException.class)
-    public void givenInvalidIndexShouldThrowInvalidParameterException() {
+    @Test(expected = IndexOutOfBoundsException.class)
+    public void givenInvalidIndexShouldThrowIndexOutOfBoundException() {
         //act
         List<String> inputArray = new ArrayList<>();
         inputArray.add("Apple");
@@ -74,17 +74,8 @@ public class UpdateArrayTest {
         updateArray.updateArrayElement(inputArray, -1, "Goa");
     }
 
-    @Test(expected = InvalidParameterException.class)
-    public void givenEmptyArrayShouldThrowInvalidParameterException() {
-        //act
-        List<String> inputArray = new ArrayList<>();
-//        inputArray.add("Apple");
-//        inputArray.add("Grape");
-        updateArray.updateArrayElement(inputArray, -9, "Goa");
-    }
-
     @Test(expected = IndexOutOfBoundsException.class)
-    public void givenInvalidIndexShouldThrowIndexOutOfBoundsException() {
+    public void givenIndexGreaterThanInputArrayListShouldThrowIndexOutOfBoundsException() {
         //act
         List<String> inputArray = new ArrayList<>();
         inputArray.add("Apple");
@@ -93,7 +84,7 @@ public class UpdateArrayTest {
     }
 
     @Test
-    public void givenArrayShouldReturnEmptyArrayList() {
+    public void givenArrayShouldReturnEmptyArrayListAfterUpdatingArray() {
         //act
         List<String> inputArray = new ArrayList<>();
         inputArray.add("Apple");
