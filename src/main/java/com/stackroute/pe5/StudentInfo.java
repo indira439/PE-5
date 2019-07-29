@@ -19,16 +19,22 @@ import java.util.List;
 
 public class StudentInfo {
 
-    /**Create object for studentSorter class*/
+    /**
+     * Create object for studentSorter class
+     */
     StudentSorter studentSorter = new StudentSorter();
-    List<Student> studentList = new ArrayList<>();
 
-    /**Implement setter to set students details*/
+    List<Student> studentList = new ArrayList<>();
+    /**
+     * Implement setter to set students details
+     */
     public void setStudentList(List<Student> studentList) {
         this.studentList = studentList;
     }
 
-    /**Sort the students info and return*/
+    /**
+     * Sort the students info and return
+     */
     public List<Student> getStudentList() {
         Collections.sort(this.studentList, Collections.reverseOrder(studentSorter));
         return this.studentList;
@@ -44,7 +50,7 @@ class Student {
     private int age;
 
     public Student(int id, String name, int age) {
-      if (age <= 0) {
+        if (age <= 0) {
             /**If age is less than 0 throw exception*/
             try {
                 throw new Exception("Invalid age");
@@ -57,7 +63,9 @@ class Student {
         }
     }
 
-    /**Implement getter*/
+    /**
+     * Implement getter
+     */
     public int getId() {
         return id;
     }
@@ -71,28 +79,35 @@ class Student {
     }
 }
 
- /**Created a `StudentSorter` class that implements `Comparator interface`*/
+/**
+ * Created a `StudentSorter` class that implements `Comparator interface`
+ */
 class StudentSorter implements Comparator<Student> {
 
     @Override
-    public int compare(Student student, Student studentNext) {
-//        int ageDifference = student.getAge() - studentNext.getAge();
-//        if (ageDifference == 0) {
-//            if (student.getName().contentEquals(studentNext.getName())) {
-//                return student.getId() - studentNext.getId();
+    public int compare(Student student, Student nextStudent) {
+//        if (student.getAge()== nextStudent.getAge()) {
+//            if (student.name == nextStudent.name) {
+//                if (studentSorter.id == nextStudent.id) {
+//                    return 0;
+//                } else if (studentSorter.id > nextStudent.id) {
+//                    return 1;
+//                } else {
+//                    return -1;
+//                }
+//            } else {
+//                return 1;
 //            }
-//            int nameDifference = student.getName().compareTo(studentNext.getName());
-//            if (nameDifference < 0) {
-//                nameDifference = nameDifference * -1;
-//            } else if (nameDifference > 0) {
-//                nameDifference = nameDifference * -1;
-//            }
-//            return nameDifference;
+//        } else if (studentSorter.age > nextStudent.age) {
+//            return -1;
+//        } else {
+//            return 1;
 //        }
-//
-        //  return ageDifference;
-        //  }
-        return 0;
+//    }
+//    }
+        return -1;
     }
 }
+
+//    }
 
